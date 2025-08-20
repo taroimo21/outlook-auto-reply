@@ -1,0 +1,22 @@
+{
+  "name": "Outlook Auto Reply Dev",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers-contrib/features/pnpm:2": {}
+  },
+  "postCreateCommand": "bash -lc 'cd frontend && pnpm i && cd ../backend && pnpm i'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vsliveshare.vsliveshare",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+  "portsAttributes": {
+    "5173": { "label": "Vite", "onAutoForward": "notify" },
+    "3000": { "label": "Backend", "onAutoForward": "notify" }
+  }
+}
